@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{%block title %}Dashboard{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-qIkfr8l6ufgslx4Qj6gHi+EuAloludOn+wCWp/WgXGDzEI5jQZJ8LbYzH0Of9On1jzVXLBjGf4kQe1yXCBPqNQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+{% block body %}
+
+    <!-- Header -->
+    <header class="bg-dark text-white text-center py-4">
+        <h1>Assignment</h1>
+        <!-- Navigation Menu (Bootstrap Navbar) -->
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mt-4 ">
+        <div class="row ">
+            <div class="col-md-8 ">
+                <p>--------- > <b>Dynamic Content</b> < ----------</p>
+                <h3 >{{time}} 
+                  
+                  
+                <!-- Add more content as needed -->
+            {% if weather %}    <sup><h5 class="float-right">{{weather}}<sup>o</sup>c {% if weather > 35 %}<sup><svg size="10" color="red"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                  </svg></sup>{%else %}<sup><svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="8" fill="url(#moonGradient)"></circle>
+                    <defs>
+                      <linearGradient id="moonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#D8EAF2;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#667288;stop-opacity:1" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  
+                  </sup>{% endif %}</h5></sup>
+                {% else %}
+            </h3>
+                  <p> Your ip is <a href="#">{{ip}}</a></p>
+                  <p>Weather information calls are exhausted today,come tomorrow</p>
+                  {% endif %}
+            </div>
+            <!-- Sidebar or additional content can be added in the remaining columns -->
+        </div>
+        <div>
+            <a href="/register" class="btn btn-primary">Create User</a>
+            <a href="/records" class="btn btn-primary">Records</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="fixed-bottom bg-dark text-white text-center py-3">
+        <p>Contact Information: <a href="mailto:dagudusai@gmail.com">dagudusai@gmail.com</a> </p> Phone: <a href="#">+919515693255</a>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-62zfiOdsG+XANqUfRu6XT89V6zzr5JRbCt5yNO0m0bY9zvHsT+6v++wzduZ1CsmWEjyZek7vv3JDPtB/X7/Abg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}

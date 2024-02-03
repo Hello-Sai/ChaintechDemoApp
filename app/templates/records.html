@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{%block title %}Records{% endblock %}
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+        {% if persons %}
+        {% for p in persons %}
+        <div class="col-md-6">
+            <!-- User Profile 1 -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{p.username}} </h5>
+                    <p class="card-text"><strong>Username:</strong> {{p.username}}</p>
+                    <p class="card-text"><strong>Phone Number:</strong>{{p.phone_number}}</p>
+                    <p class="card-text"><strong>Email:</strong> {{p.email}}</p>
+                    <p class="card-text"><strong>Address:</strong> {{p.address}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+            <p class="text-center alert alert-warning">No Records Found</p>
+        {% endif %}
+    </div>
+    <footer><a href="/..">Go back</a></footer>
+</div>
+{% endblock %}
